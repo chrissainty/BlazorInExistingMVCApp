@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Components
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Number
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Credits
+            </th>
+            <th>
+                Department
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Courses)
+        {
+            <tr>
+                <td>
+                    @item.CourseID
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Credits
+                </td>
+                <td>
+                    @item.Department.Name
+                </td>
+                <td>
+                    <a href="Courses/Edit/@item.CourseID">Edit</a> |
+                    <a href="Courses/Details/@item.CourseID">Details</a> |
+                    <a href="Courses/Delete/@item.CourseID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter] IEnumerable<ContosoUniversity.Models.Course> Courses { get; set; }
+}
