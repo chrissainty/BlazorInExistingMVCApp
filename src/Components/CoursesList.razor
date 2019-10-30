@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Components
+@inject System.Net.Http.HttpClient HttpClient
 
 <table class="table">
     <thead>
@@ -45,5 +46,5 @@
 </table>
 
 @code {
-    [Parameter] IEnumerable<ContosoUniversity.Models.Course> Courses { get; set; }
+    [Parameter] public IEnumerable<ContosoUniversity.Models.Course> Courses { get; set; }
 }

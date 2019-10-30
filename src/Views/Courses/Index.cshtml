@@ -10,4 +10,4 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-@(await Html.RenderComponentAsync<CoursesList>(new { Courses = Model }))
+@(await Html.RenderComponentAsync<CoursesList>(RenderMode.ServerPrerendered, new { Courses = Model }))
